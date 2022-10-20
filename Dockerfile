@@ -5,7 +5,7 @@ ENV LANG C.UTF-8
 
 RUN \
   apk add --update --no-cache \
-    openconnect jq
+    openconnect
 
 # Copy data for add-on
 COPY run.sh /

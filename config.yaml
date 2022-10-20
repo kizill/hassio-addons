@@ -1,8 +1,21 @@
-name: "Hello world"
-description: "My first real add-on!"
+name: "OpenConnect client"
+description: "OpenConnect client addon"
 version: "1.0.0"
-slug: "hello_world"
+slug: "openconnect_client"
+startup: "before"
+boot: "auto"
+host_network: true
+privileged: 
+  - NET_ADMIN
 init: false
+options:
+  server_url: "https://example.com:8443"
+  username: "beer"
+  password: "123456"
+schema:
+  server_url: url
+  username: str
+  password: str
 arch:
   - aarch64
   - amd64

@@ -1,3 +1,3 @@
 #!/usr/bin/with-contenv bashio
 
-echo "Hello world!"
+echo "$(bashio::config 'username')" | openconnect --passwd-on-stdin --user "$(bashio::config 'username')" $(bashio::config 'server_url')
