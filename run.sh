@@ -7,5 +7,8 @@ password=$(bashio::config 'password')
 url=$(bashio::config 'server_url')
 cert=$(bashio::config 'cert')
 
-exec bash -c "echo $password | openconnect --passwd-on-stdin --servercert $cert --user $username $url"
+while true
+do
+bash -c "echo $password | openconnect --passwd-on-stdin --servercert $cert --user $username $url" || sleep 30
+done
 
